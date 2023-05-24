@@ -1,0 +1,6 @@
+SELECT o.user_id, u.name, SUM(o.price) AS total_spent
+FROM orders o
+INNER JOIN users u ON o.user_id = u.user_id
+GROUP BY o.user_id, u.name
+ORDER BY total_spent DESC
+LIMIT 1;
